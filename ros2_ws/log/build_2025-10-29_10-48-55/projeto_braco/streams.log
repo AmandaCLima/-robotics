@@ -1,0 +1,20 @@
+[0.010s] Invoking command in '/home/CIN/acfml/ros2_ws/build/projeto_braco': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/CIN/acfml/ros2_ws/build/projeto_braco -- -j16 -l16
+[0.043s] Invoked command in '/home/CIN/acfml/ros2_ws/build/projeto_braco' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/CIN/acfml/ros2_ws/build/projeto_braco -- -j16 -l16
+[0.052s] Invoking command in '/home/CIN/acfml/ros2_ws/build/projeto_braco': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/CIN/acfml/ros2_ws/build/projeto_braco
+[0.058s] -- Install configuration: ""
+[0.058s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/package_run_dependencies/projeto_braco
+[0.058s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/parent_prefix_path/projeto_braco
+[0.058s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/ament_prefix_path.sh
+[0.058s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/ament_prefix_path.dsv
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/path.sh
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/path.dsv
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.bash
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.sh
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.zsh
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.dsv
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/package.dsv
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/packages/projeto_braco
+[0.059s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/cmake/projeto_bracoConfig.cmake
+[0.060s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/cmake/projeto_bracoConfig-version.cmake
+[0.060s] -- Installing: /home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/package.xml
+[0.061s] Invoked command in '/home/CIN/acfml/ros2_ws/build/projeto_braco' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/CIN/acfml/ros2_ws/build/projeto_braco

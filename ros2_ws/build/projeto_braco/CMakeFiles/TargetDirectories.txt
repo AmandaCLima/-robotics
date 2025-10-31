@@ -1,0 +1,9 @@
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/uninstall.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/projeto_braco_uninstall.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/test.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/edit_cache.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/rebuild_cache.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/list_install_components.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/install.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/install/local.dir
+/home/CIN/acfml/ros2_ws/build/projeto_braco/CMakeFiles/install/strip.dir

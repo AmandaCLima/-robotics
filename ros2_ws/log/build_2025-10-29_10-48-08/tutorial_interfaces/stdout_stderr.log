@@ -1,0 +1,6 @@
+[31mCMake Error at CMakeLists.txt:30:
+  Parse error.  Expected a command name, got quoted argument with text
+  "msg/Sphere.msg".
+
+[0m
+-- Configuring incomplete, errors occurred!

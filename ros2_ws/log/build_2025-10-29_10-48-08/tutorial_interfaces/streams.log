@@ -1,0 +1,8 @@
+[0.438s] Invoking command in '/home/CIN/acfml/ros2_ws/build/tutorial_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/CIN/acfml/ros2_ws/src/tutorial_interfaces -DCMAKE_INSTALL_PREFIX=/home/CIN/acfml/ros2_ws/install/tutorial_interfaces
+[0.467s] [31mCMake Error at CMakeLists.txt:30:
+[0.467s]   Parse error.  Expected a command name, got quoted argument with text
+[0.467s]   "msg/Sphere.msg".
+[0.467s] 
+[0.467s] [0m
+[0.468s] -- Configuring incomplete, errors occurred!
+[0.469s] Invoked command in '/home/CIN/acfml/ros2_ws/build/tutorial_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/CIN/acfml/ros2_ws/src/tutorial_interfaces -DCMAKE_INSTALL_PREFIX=/home/CIN/acfml/ros2_ws/install/tutorial_interfaces

@@ -1,0 +1,5 @@
+  File "/home/CIN/acfml/ros2_ws/install/py_pubsub/lib/python3.12/site-packages/py_pubsub/publisher_member_function.py", line 16
+    		self.get_logger().info('Publishing: "%s"', %msg.data)
+    		                                           ^
+SyntaxError: invalid syntax
+

@@ -1,0 +1,15 @@
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/package_run_dependencies/projeto_braco
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/parent_prefix_path/projeto_braco
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/ament_prefix_path.sh
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/ament_prefix_path.dsv
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/path.sh
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/environment/path.dsv
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.bash
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.sh
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.zsh
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/local_setup.dsv
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/package.dsv
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/ament_index/resource_index/packages/projeto_braco
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/cmake/projeto_bracoConfig.cmake
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/cmake/projeto_bracoConfig-version.cmake
+/home/CIN/acfml/ros2_ws/install/projeto_braco/share/projeto_braco/package.xml

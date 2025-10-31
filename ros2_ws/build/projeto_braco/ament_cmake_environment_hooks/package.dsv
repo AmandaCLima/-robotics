@@ -1,0 +1,4 @@
+source;share/projeto_braco/local_setup.bash
+source;share/projeto_braco/local_setup.dsv
+source;share/projeto_braco/local_setup.sh
+source;share/projeto_braco/local_setup.zsh
