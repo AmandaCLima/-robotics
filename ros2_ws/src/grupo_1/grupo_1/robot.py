@@ -50,9 +50,11 @@ class Robot():
 
         return np.array([base, q1, q2, q3])
 
-    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.005):
-        q_init = self.inverse_kinematics(pose_inicial)
-        q_fim = self.inverse_kinematics(pose_final)
+    def joint_space_trajectory(self, pose_final, dt=0.02):
+        # q_init = self.inverse_kinematics(pose_inicial)
+        q_init = [0, 90, -90, 0]
+        # q_fim = self.inverse_kinematics(pose_final)
+        q_fim = [0, 90, -60, 0]
 
         print("Posição inicial das juntas:", q_init)
         print("Posição final das juntas:", q_fim)
@@ -81,7 +83,7 @@ class Robot():
         qd = np.gradient(qs, dt, axis=0)   # velocidade
         qdd = np.gradient(qd, dt, axis=0)  # aceleração
 
-        return t_total, qs, qd, qdd
+        return dt, qs, qd, qdd
 
     def _trapezoidal_profile(self, q0, qf, vmax, amax, dt):
         dq = qf - q0
