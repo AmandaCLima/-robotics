@@ -2,7 +2,7 @@ from robot import Robot
 import sys 
 import rclpy
 from arm_interfaces.srv import FollowTrajectory
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoints
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from rclpy.node import Node
 import numpy as np
 
@@ -15,8 +15,17 @@ class MinimalClientAsync(Node):
         self.req = FollowTrajectory.Request()
 
     def send_request(self, pos, time):
-        self.req.data.points.positions = pos
-        self.req.data.points.time_from_start = time
+        self.req.trajectory.points = []
+        for idx in range(len(pos[0])):
+            pt = JointTrajectoryPoint()
+            pt.positions = [0] * 4
+            pt.positions[0] = pos[0][idx]
+            pt.positions[1] = pos[1][idx]
+            pt.positions[2] = pos[2][idx]
+            pt.positions[3] = pos[3][idx]
+            pt.time_from_start = time
+            self.req.trajectory.points.append(pt)
+        print('Calling service...')
         self.cli.call_async(self.req)
     
 def main():
