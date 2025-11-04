@@ -74,7 +74,7 @@ class Robot():
 
         return np.array([q0, q1, q2, q3])
 
-    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.005):
+    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.02):
         q_init = self.inverse_kinematics(pose_inicial)
         q_fim = self.inverse_kinematics(pose_final)
 
