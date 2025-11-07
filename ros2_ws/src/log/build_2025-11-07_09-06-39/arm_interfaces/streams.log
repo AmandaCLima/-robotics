@@ -1,0 +1,237 @@
+[0.012s] Invoking command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/CIN/acfml/Robotics/ros2_ws/src/arm_interfaces -DCMAKE_INSTALL_PREFIX=/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces
+[0.117s] -- The C compiler identification is GNU 13.2.0
+[0.239s] -- The CXX compiler identification is GNU 13.2.0
+[0.258s] -- Detecting C compiler ABI info
+[0.347s] -- Detecting C compiler ABI info - done
+[0.354s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.354s] -- Detecting C compile features
+[0.354s] -- Detecting C compile features - done
+[0.365s] -- Detecting CXX compiler ABI info
+[0.457s] -- Detecting CXX compiler ABI info - done
+[0.464s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.465s] -- Detecting CXX compile features
+[0.465s] -- Detecting CXX compile features - done
+[0.471s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.595s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.693s] -- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.733s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.747s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.764s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.781s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.850s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.865s] -- Found rosidl_adapter: 4.6.5 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.869s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.390s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[2.068s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.337s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.342s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.450s] -- Found PythonExtra: /usr/bin/python3  
+[2.792s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.846s] -- Added test 'lint_cmake' to check CMake code style
+[2.848s] -- Added test 'xmllint' to check XML markup files
+[2.854s] -- Configuring done (2.8s)
+[2.887s] -- Generating done (0.0s)
+[2.896s] -- Build files have been written to: /home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces
+[2.906s] Invoked command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/CIN/acfml/Robotics/ros2_ws/src/arm_interfaces -DCMAKE_INSTALL_PREFIX=/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces
+[2.908s] Invoking command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces -- -j16 -l16
+[2.952s] [  2%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[2.958s] [  2%] Built target ament_cmake_python_copy_arm_interfaces
+[3.094s] [  2%] Built target arm_interfaces__rosidl_generator_type_description
+[3.104s] [  5%] [34m[1mGenerating C code for ROS interfaces[0m
+[3.115s] [  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.157s] running egg_info
+[3.157s] creating arm_interfaces.egg-info
+[3.177s] writing arm_interfaces.egg-info/PKG-INFO
+[3.178s] writing dependency_links to arm_interfaces.egg-info/dependency_links.txt
+[3.178s] writing top-level names to arm_interfaces.egg-info/top_level.txt
+[3.178s] writing manifest file 'arm_interfaces.egg-info/SOURCES.txt'
+[3.237s] reading manifest file 'arm_interfaces.egg-info/SOURCES.txt'
+[3.237s] writing manifest file 'arm_interfaces.egg-info/SOURCES.txt'
+[3.264s] [  8%] Built target ament_cmake_python_build_arm_interfaces_egg
+[3.322s] [  8%] Built target arm_interfaces__cpp
+[3.352s] [ 14%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/srv/detail/follow_trajectory__description.c.o[0m
+[3.353s] [ 14%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/srv/detail/follow_trajectory__functions.c.o[0m
+[3.353s] [ 17%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_c.dir/rosidl_generator_c/arm_interfaces/srv/detail/follow_trajectory__type_support.c.o[0m
+[3.433s] [ 20%] [32m[1mLinking C shared library libarm_interfaces__rosidl_generator_c.so[0m
+[3.467s] [ 20%] Built target arm_interfaces__rosidl_generator_c
+[3.477s] [ 35%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.477s] [ 35%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.477s] [ 35%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.478s] [ 35%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.478s] [ 35%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.478s] [ 38%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.676s] [ 44%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interfaces/srv/follow_trajectory__type_support.cpp.o[0m
+[3.676s] [ 44%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interfaces/srv/follow_trajectory__type_support.cpp.o[0m
+[3.717s] [ 50%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interfaces/srv/detail/follow_trajectory__type_support.cpp.o[0m
+[3.717s] [ 50%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interfaces/srv/detail/follow_trajectory__type_support.c.o[0m
+[3.732s] [ 55%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_c.so[0m
+[3.732s] [ 55%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interfaces/srv/detail/dds_fastrtps/follow_trajectory__type_support.cpp.o[0m
+[3.747s] [ 58%] [32mBuilding CXX object CMakeFiles/arm_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interfaces/srv/detail/follow_trajectory__type_support_c.cpp.o[0m
+[3.770s] [ 61%] [32m[1mLinking C shared library libarm_interfaces__rosidl_typesupport_introspection_c.so[0m
+[3.772s] [ 61%] Built target arm_interfaces__rosidl_typesupport_c
+[3.805s] [ 61%] Built target arm_interfaces__rosidl_typesupport_introspection_c
+[4.183s] [ 64%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_cpp.so[0m
+[4.241s] [ 67%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[4.254s] [ 67%] Built target arm_interfaces__rosidl_typesupport_cpp
+[4.283s] [ 70%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[4.288s] [ 70%] Built target arm_interfaces__rosidl_typesupport_fastrtps_c
+[4.350s] [ 70%] Built target arm_interfaces__rosidl_typesupport_introspection_cpp
+[4.393s] [ 73%] [32m[1mLinking CXX shared library libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.458s] [ 73%] Built target arm_interfaces__rosidl_typesupport_fastrtps_cpp
+[4.474s] [ 73%] Built target arm_interfaces
+[4.492s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.740s] [ 76%] Built target arm_interfaces__py
+[4.757s] [ 79%] [32mBuilding C object CMakeFiles/arm_interfaces__rosidl_generator_py.dir/rosidl_generator_py/arm_interfaces/srv/_follow_trajectory_s.c.o[0m
+[4.903s] [ 82%] [32m[1mLinking C shared library libarm_interfaces__rosidl_generator_py.so[0m
+[4.945s] [ 82%] Built target arm_interfaces__rosidl_generator_py
+[4.965s] [ 91%] [32mBuilding C object CMakeFiles/arm_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.965s] [ 91%] [32mBuilding C object CMakeFiles/arm_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.965s] [ 91%] [32mBuilding C object CMakeFiles/arm_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[5.066s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.so[0m
+[5.066s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[5.069s] [100%] [32m[1mLinking C shared module rosidl_generator_py/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[5.099s] [100%] Built target arm_interfaces_s__rosidl_typesupport_c
+[5.099s] [100%] Built target arm_interfaces_s__rosidl_typesupport_introspection_c
+[5.101s] [100%] Built target arm_interfaces_s__rosidl_typesupport_fastrtps_c
+[5.116s] Invoked command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces -- -j16 -l16
+[5.125s] Invoking command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces
+[5.132s] -- Install configuration: ""
+[5.132s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/ament_index/resource_index/rosidl_interfaces/arm_interfaces
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/srv/FollowTrajectory.json
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg/rosidl_generator_c__visibility_control.h
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.133s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__functions.h
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__description.c
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__type_support.h
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__struct.h
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__type_support.c
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__functions.c
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/follow_trajectory.h
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/library_path.sh
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/library_path.dsv
+[5.134s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so
+[5.135s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_c.so" to ""
+[5.135s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.135s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg
+[5.135s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[5.135s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.135s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.135s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__rosidl_typesupport_fastrtps_c.h
+[5.135s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so
+[5.135s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__builder.hpp
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__type_support.hpp
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__struct.hpp
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__traits.hpp
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/follow_trajectory.hpp
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.136s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg
+[5.136s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.137s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.137s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.137s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/dds_fastrtps
+[5.137s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[5.137s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[5.137s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.137s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.137s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg
+[5.138s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.138s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.138s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.138s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__rosidl_typesupport_introspection_c.h
+[5.138s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__type_support.c
+[5.138s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so
+[5.138s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[5.138s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so
+[5.138s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_c.so" to ""
+[5.139s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces
+[5.139s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv
+[5.139s] -- Up-to-date: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail
+[5.139s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__type_support.cpp
+[5.139s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/include/arm_interfaces/arm_interfaces/srv/detail/follow_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[5.139s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so
+[5.139s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[5.139s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so
+[5.140s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_typesupport_cpp.so" to ""
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.sh
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/pythonpath.dsv
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces-0.0.0-py3.12.egg-info
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[5.140s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/__init__.py
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.so
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_c.c
+[5.141s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/_arm_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[5.142s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv
+[5.142s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv/__init__.py
+[5.142s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv/_follow_trajectory.py
+[5.142s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv/_follow_trajectory_s.c
+[5.142s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.175s] Listing '/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces'...
+[5.176s] Compiling '/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/__init__.py'...
+[5.176s] Listing '/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv'...
+[5.176s] Compiling '/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv/__init__.py'...
+[5.176s] Compiling '/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/srv/_follow_trajectory.py'...
+[5.180s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[5.180s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_fastrtps_c.so" to ""
+[5.180s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.so
+[5.181s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_introspection_c.so" to ""
+[5.181s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.so
+[5.181s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/python3.12/site-packages/arm_interfaces/arm_interfaces_s__rosidl_typesupport_c.so" to ""
+[5.181s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_py.so
+[5.182s] -- Set non-toolchain portion of runtime path of "/home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/lib/libarm_interfaces__rosidl_generator_py.so" to ""
+[5.182s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/srv/FollowTrajectory.idl
+[5.182s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/srv/FollowTrajectory.srv
+[5.182s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/ament_index/resource_index/package_run_dependencies/arm_interfaces
+[5.182s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/ament_index/resource_index/parent_prefix_path/arm_interfaces
+[5.182s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.sh
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/ament_prefix_path.dsv
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/path.sh
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/environment/path.dsv
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/local_setup.bash
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/local_setup.sh
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/local_setup.zsh
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/local_setup.dsv
+[5.183s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/package.dsv
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/ament_index/resource_index/packages/arm_interfaces
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_generator_cExport.cmake
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_generator_cExport-noconfig.cmake
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.184s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_generator_cppExport.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[5.185s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_generator_pyExport.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/export_arm_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[5.186s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig.cmake
+[5.187s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/cmake/arm_interfacesConfig-version.cmake
+[5.188s] -- Installing: /home/CIN/acfml/Robotics/ros2_ws/src/install/arm_interfaces/share/arm_interfaces/package.xml
+[5.190s] Invoked command in '/home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1:/home/CIN/acfml/Robotics/ros2_ws/src/install/py_srvcli:/home/CIN/acfml/Robotics/ros2_ws/install/py_pubsub:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/CIN/acfml/Robotics/ros2_ws/src/build/arm_interfaces

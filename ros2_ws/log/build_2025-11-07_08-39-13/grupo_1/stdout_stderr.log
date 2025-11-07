@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/grupo_1/grupo_1.egg-info
+writing ../../build/grupo_1/grupo_1.egg-info/PKG-INFO
+writing dependency_links to ../../build/grupo_1/grupo_1.egg-info/dependency_links.txt
+writing entry points to ../../build/grupo_1/grupo_1.egg-info/entry_points.txt
+writing requirements to ../../build/grupo_1/grupo_1.egg-info/requires.txt
+writing top-level names to ../../build/grupo_1/grupo_1.egg-info/top_level.txt
+writing manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+reading manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build
+creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib
+creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+copying grupo_1/__init__.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+copying grupo_1/teste.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+copying grupo_1/client.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+copying grupo_1/robot.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+running install
+running install_lib
+creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/__init__.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/teste.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/client.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/robot.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/teste.py to teste.cpython-312.pyc
+byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/client.py to client.cpython-312.pyc
+byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/robot.py to robot.cpython-312.pyc
+running install_data
+creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index
+creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index/resource_index
+creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index/resource_index/packages
+error: can't copy 'resource/grupo_1': doesn't exist or not a regular file

@@ -3,6 +3,9 @@ import rclpy
 from arm_interfaces.srv import FollowTrajectory
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from rclpy.node import Node
+from builtin_interfaces.msg import Duration
+
+
 import numpy as np
 import math as m
 
@@ -55,27 +58,24 @@ class Robot():
             return None
 
         # Selects the best solution for q2 and computes q1 accordingly (if both are valid then selects the one with smaller absolute value for q1)
-        if -90 <= q2[0] <= 90:
-            q1_positive = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0])
-            q1_negative = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1])
-            print(f"q1_positive: {q1_positive}, q1_negative: {q1_negative}")
-            if abs(q1_positive) <= abs(q1_negative):
-                q2 = q2[0]
-                q1 = q1_positive
-            else:
-                q2 = q2[1]
-                q1 = q1_negative
+        q1 = []
+        q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0]))
+        q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1]))
+        print(f"q1_positive: {q1[0]}, q1_negative: {q1[1]}")
+        print(f"q2_positive: {q2[0]}, q2_negative: {q2[1]}")
 
         # Computes q3 based on desired orientation phi
         q3 = phi - (q1 + q2)
+        print(f"q3_positive: {q3[0]}, q3_negative: {q3[1]}")
 
         return np.array([q0, q1, q2, q3])
 
-    def joint_space_trajectory(self, dt=0.02):
-        # q_init = self.inverse_kinematics(pose_inicial)
-        # q_fim = self.inverse_kinematics(pose_final)
+    def joint_space_trajectory(self, pose_final=0, pose_inicial=0, dt=0.02):
+        q_init = self.inverse_kinematics(pose_inicial)
+        q_fim = self.inverse_kinematics(pose_final)
+
         q_init = [0, 90, -90, 0]
-        q_fim = [0, 90, -60, 0]
+        q_fim = [90, 90, -30, -60]
 
         if q_init is None or q_fim is None:
             raise ValueError("Posição inicial ou final inalcançável")
@@ -127,7 +127,7 @@ class Robot():
         qd = np.gradient(qs, dt, axis=0)   # velocity
         qdd = np.gradient(qd, dt, axis=0)  # acceleration
 
-        return dt, qs, qd, qdd
+        return t_total, qs, qd, qdd
 
     def _trapezoidal_profile(self, q0, qf, amax, T_sync, t):
         dq = qf - q0
@@ -260,9 +260,6 @@ class Robot():
         return m.degrees(q1)
 
 
-
-
-
 class MinimalClientAsync(Node):
     def __init__(self):
         super().__init__('minimal_client_async')
@@ -272,7 +269,7 @@ class MinimalClientAsync(Node):
         self.req = FollowTrajectory.Request()
 
     def send_request(self, pos, time):
-        self.req.trajectory.points = []
+        self.req.data.points = []
         for idx in range(len(pos)):
             pt = JointTrajectoryPoint()
             pt.positions = [0] * 4
@@ -280,8 +277,8 @@ class MinimalClientAsync(Node):
             pt.positions[1] = pos[idx][1]
             pt.positions[2] = pos[idx][2]
             pt.positions[3] = pos[idx][3]
-            pt.time_from_start = time
-            self.req.trajectory.points.append(pt)
+            pt.time_from_start = Duration(sec=int(time[idx]), nanosec=int((time[idx] % 1) * 1e9))
+            self.req.data.points.append(pt)
         print('Calling service...')
         self.cli.call_async(self.req)
     
@@ -307,6 +304,27 @@ def main():
 
     minimal_client.destroy_node()
     rclpy.shutdown()
+
+
+# class MinimalClientAsync(Node):
+#     def __init__(self):
+#         super().__init__('minimal_client_async')
+#         self.cli = self.create_client(FollowTrajectory, 'moveServer/followTrajectory_srv')
+#         while not self.cli.wait_for_service(timeout_sec = 1.0):
+#             self.get_logger().info('service not available, waiting again...')
+#         print("Conectou !!")
+
+# def main():
+#     rclpy.init()
+#     minimal_client = MinimalClientAsync()
+#     future = minimal_client.send_request(int(sys.argv[1]), int(sys.argv[2]))
+#     rclpy.spin_until_future_complete(minimal_client, future)
+#     response = future.result()
+#     #minimal_client.get_logger().info('Result of add_two_ints: for %d + %d = %d' % (int(sys.argv[1]), int(sys.argv[2]), response.sum))
+
+#     minimal_client.destroy_node()
+#     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

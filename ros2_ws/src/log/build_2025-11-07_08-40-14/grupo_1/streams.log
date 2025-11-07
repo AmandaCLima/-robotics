@@ -1,0 +1,17 @@
+[0.725s] Invoking command in '/home/CIN/acfml/Robotics/ros2_ws/src/grupo_1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/grupo_1 build --build-base /home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/build install --record /home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/install.log --single-version-externally-managed install_data
+[0.955s] running egg_info
+[0.974s] writing ../build/grupo_1/grupo_1.egg-info/PKG-INFO
+[0.975s] writing dependency_links to ../build/grupo_1/grupo_1.egg-info/dependency_links.txt
+[0.975s] writing entry points to ../build/grupo_1/grupo_1.egg-info/entry_points.txt
+[0.975s] writing requirements to ../build/grupo_1/grupo_1.egg-info/requires.txt
+[0.975s] writing top-level names to ../build/grupo_1/grupo_1.egg-info/top_level.txt
+[1.014s] reading manifest file '../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[1.014s] adding license file 'LICENSE'
+[1.015s] writing manifest file '../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[1.015s] running build
+[1.015s] running build_py
+[1.015s] running install
+[1.020s] running install_lib
+[1.040s] running install_data
+[1.040s] error: can't copy 'resource/grupo_1': doesn't exist or not a regular file
+[1.054s] Invoked command in '/home/CIN/acfml/Robotics/ros2_ws/src/grupo_1' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/acfml/Robotics/ros2_ws/src/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/grupo_1 build --build-base /home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/build install --record /home/CIN/acfml/Robotics/ros2_ws/src/build/grupo_1/install.log --single-version-externally-managed install_data

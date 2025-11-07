@@ -1,0 +1,38 @@
+[0.757s] Invoking command in '/home/CIN/acfml/Robotics/ros2_ws/src/grupo_1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/grupo_1 build --build-base /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build install --record /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/install.log --single-version-externally-managed install_data
+[0.989s] running egg_info
+[0.989s] creating ../../build/grupo_1/grupo_1.egg-info
+[1.010s] writing ../../build/grupo_1/grupo_1.egg-info/PKG-INFO
+[1.010s] writing dependency_links to ../../build/grupo_1/grupo_1.egg-info/dependency_links.txt
+[1.010s] writing entry points to ../../build/grupo_1/grupo_1.egg-info/entry_points.txt
+[1.010s] writing requirements to ../../build/grupo_1/grupo_1.egg-info/requires.txt
+[1.010s] writing top-level names to ../../build/grupo_1/grupo_1.egg-info/top_level.txt
+[1.010s] writing manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[1.050s] reading manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[1.051s] adding license file 'LICENSE'
+[1.051s] writing manifest file '../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[1.051s] running build
+[1.051s] running build_py
+[1.051s] creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build
+[1.051s] creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib
+[1.051s] creating /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+[1.051s] copying grupo_1/__init__.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+[1.052s] copying grupo_1/teste.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+[1.052s] copying grupo_1/client.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+[1.052s] copying grupo_1/robot.py -> /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1
+[1.052s] running install
+[1.057s] running install_lib
+[1.076s] creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[1.076s] copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/__init__.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[1.076s] copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/teste.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[1.076s] copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/client.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[1.077s] copying /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build/lib/grupo_1/robot.py -> /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[1.077s] byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/__init__.py to __init__.cpython-312.pyc
+[1.077s] byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/teste.py to teste.cpython-312.pyc
+[1.077s] byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/client.py to client.cpython-312.pyc
+[1.080s] byte-compiling /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages/grupo_1/robot.py to robot.cpython-312.pyc
+[1.081s] running install_data
+[1.081s] creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index
+[1.081s] creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index/resource_index
+[1.081s] creating /home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/share/ament_index/resource_index/packages
+[1.082s] error: can't copy 'resource/grupo_1': doesn't exist or not a regular file
+[1.098s] Invoked command in '/home/CIN/acfml/Robotics/ros2_ws/src/grupo_1' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/acfml/Robotics/ros2_ws/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/grupo_1 build --build-base /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/build install --record /home/CIN/acfml/Robotics/ros2_ws/build/grupo_1/install.log --single-version-externally-managed install_data
