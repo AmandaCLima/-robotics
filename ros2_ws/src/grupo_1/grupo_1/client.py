@@ -296,13 +296,13 @@ class MinimalClientAsync(Node):
 
     def send_request(self, pos, time):
         self.req.trajectory.points = []
-        for idx in range(len(pos[0])):
+        for idx in range(len(pos)):
             pt = JointTrajectoryPoint()
             pt.positions = [0] * 4
-            pt.positions[0] = pos[0][idx]
-            pt.positions[1] = pos[1][idx]
-            pt.positions[2] = pos[2][idx]
-            pt.positions[3] = pos[3][idx]
+            pt.positions[0] = pos[idx][0]
+            pt.positions[1] = pos[idx][1]
+            pt.positions[2] = pos[idx][2]
+            pt.positions[3] = pos[idx][3]
             pt.time_from_start = time
             self.req.trajectory.points.append(pt)
         print('Calling service...')

@@ -9,7 +9,6 @@ class Robot():
         self.v_max = v_max
         self.a_max = a_max
 
-
     def forward_kinematics(self, angles):
         # Tool point transformation to basis reference
         T = (self._Tz(self.distances[0])
@@ -25,7 +24,7 @@ class Robot():
         q1_norm = (angles[0] + 180) % 360 - 180
         tool_angle_norm = (tool_angle + 180) % 360 - 180
 
-        # Asjust orientation if the arm is "flipped" (180 degrees difference in Yaw)
+        # Adjust orientation if the arm is "flipped" (180 degrees difference in Yaw)
         angle_diff = abs(tool_angle_norm - q1_norm)
         if angle_diff > 179.9 or angle_diff < -179.9:
             orientation = 180 - orientation
@@ -48,12 +47,13 @@ class Robot():
         try:
             q2 = self._compute_q2(r_last_motor, z_last_motor, self.distances[2], self.distances[3])
         except Exception: # Boa prática é capturar a exceção específica
-            return
+            return None
 
         # Selects the best solution for q2 and computes q1 accordingly (if both are valid then selects the one with smaller absolute value for q1)
-        if -90 <= q2[0] <= 90 and -90 <= q2[1] <= 90:
+        if -90 <= q2[0] <= 90:
             q1_positive = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0])
             q1_negative = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1])
+            print(f"q1_positive: {q1_positive}, q1_negative: {q1_negative}")
             if abs(q1_positive) <= abs(q1_negative):
                 q2 = q2[0]
                 q1 = q1_positive
@@ -61,31 +61,22 @@ class Robot():
                 q2 = q2[1]
                 q1 = q1_negative
 
-        elif -90 <= q2[0] <= 90:
-            q2 = q2[0]
-            q1 = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2)
-
-        else:
-            q2 = q2[1]
-            q1 = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2)
-
         # Computes q3 based on desired orientation phi
         q3 = phi - (q1 + q2)
 
         return np.array([q0, q1, q2, q3])
 
-    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.005):
+    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.02):
         q_init = self.inverse_kinematics(pose_inicial)
         q_fim = self.inverse_kinematics(pose_final)
 
         if q_init is None or q_fim is None:
-            print("Erro: Cinemática Inversa falhou. Posição inalcançável.")
-            return None, None, None, None
+            raise ValueError("Posição inicial ou final inalcançável")
 
-        print("Posição inicial das juntas:", q_init)
-        print("Posição final das juntas:", q_fim)
+        print("Initial joints position:", q_init)
+        print("Final joints position:", q_fim)
 
-        # --- ETAPA 1: Encontrar o tempo de sincronização ---
+        # Find the maximum time required among all joints
         times_total = []
         for i in range(self.num_joints):
             if q_init[i] == q_fim[i]:
@@ -94,95 +85,81 @@ class Robot():
                 t_total_joint = self._calculate_t_total(q_init[i], q_fim[i], self.v_max[i], self.a_max[i])
                 times_total.append(t_total_joint)
 
-        T_sync = max(times_total) # Tempo mestre (o mais lento)
+        T_sync = max(times_total) # Total synchronized time
 
-        # Se T_sync for 0 (sem movimento), retorne imediatamente
+        # If T_sync is zero, return initial positions only (no movement)
         if T_sync == 0:
             t_total = np.array([0])
-            qs = q_init.reshape(1, -1) # Uma linha
+            qs = q_init.reshape(1, -1)
             qd = np.zeros_like(qs)
             qdd = np.zeros_like(qs)
             return t_total, qs, qd, qdd
 
-        print(f"Sincronizando movimento para: {T_sync:.3f} segundos")
+        print(f"Synchronizing movement for: {T_sync:.3f} seconds")
 
-        # --- ETAPA 2: Gerar trajetórias escalonadas (sem interpolação!) ---
+        # Generate trajectories for each joint based on T_sync
         qs_list = []
 
-        # O número de pontos deve ser o mesmo para todos
+        # The number of points must be the same for all
         num_points = int(round(T_sync / dt)) + 1
-        t_total = np.linspace(0, T_sync, num_points) # Este é o vetor de tempo final
+        t_total = np.linspace(0, T_sync, num_points) # This is the final time vector
 
         for i in range(self.num_joints):
             if q_init[i] == q_fim[i]:
-                # Junta parada: apenas repita a posição
+                # Joint doesn't move: just repeat the position
                 q = np.full(num_points, q_init[i])
             else:
-                # --- MUDANÇA AQUI ---
-                # Gere o perfil forçando o T_sync
-                # Note que passamos self.a_max[i]
-                q = self._trapezoidal_profile_scaled(q_init[i], q_fim[i],
-                                                    self.a_max[i], T_sync, t_total)
-                # --- FIM DA MUDANÇA ---
+                q = self._trapezoidal_profile(q_init[i], q_fim[i], self.a_max[i], T_sync, t_total)
 
             qs_list.append(q)
 
-        # Converter em array (linhas: tempo, colunas: juntas)
+        # Convert to array (rows: time, columns: joints)
         qs = np.vstack(qs_list).T
 
-        # Calcular velocidade e aceleração
-        qd = np.gradient(qs, dt, axis=0)   # velocidade
-        qdd = np.gradient(qd, dt, axis=0)  # aceleração
+        # Calculate velocity and acceleration
+        qd = np.gradient(qs, dt, axis=0)   # velocity
+        qdd = np.gradient(qd, dt, axis=0)  # acceleration
 
         return t_total, qs, qd, qdd
 
-    # --- FUNÇÃO NOVA / CORRIGIDA ---
-    # Esta é a função que você realmente precisa
-    def _trapezoidal_profile_scaled(self, q0, qf, amax, T_sync, t):
-        """
-        Calcula um perfil trapezoidal escalonado para um T_sync fixo.
-        Ele recalcula a velocidade necessária (v_scaled) assumindo a amax da junta.
-        """
+    def _trapezoidal_profile(self, q0, qf, amax, T_sync, t):
         dq = qf - q0
 
-        # Resolve a equação quadrática para encontrar a v_scaled necessária
+        # Solve the quadratic equation to find the required v_scaled
         # (1/amax) * v_new**2 - T_sync * v_new + abs(dq) = 0
 
-        # Proteção contra divisão por zero ou valores inválidos
         if amax == 0: return np.full_like(t, qf)
 
         discriminant = T_sync**2 - 4 * abs(dq) / amax
 
-        # Se o discriminante for negativo, T_sync é muito curto (o que não deve acontecer)
-        # Isso significa que nem mesmo amax é suficiente, o que é um erro de lógica
-        # Mas, por segurança, vamos tratar como um perfil triangular
+        # If the discriminant is negative, T_sync is too short (triangular profile)
         if discriminant < 0:
-            # print("Aviso: T_sync é menor que o tempo triangular. Ajustando.")
             discriminant = 0
 
-        # Queremos a solução de velocidade *menor* que funciona
+        # We want the *smaller* velocity solution that works
         v_scaled = (amax / 2) * (T_sync - np.sqrt(discriminant))
 
-        # Por segurança, v_scaled não pode ser 0 se houver movimento
+        # For safety, v_scaled cannot be 0 if there is movement
         if v_scaled == 0 and dq != 0:
-             # Isso acontece se T_sync = 0, o que já é tratado, mas por segurança:
-             if T_sync > 0: v_scaled = 2 * abs(dq) / T_sync # Perfil triangular
-             else: return np.full_like(t, qf)
+             # This happens if T_sync = 0, which is already handled, but for safety:
+             if T_sync > 0: 
+                 v_scaled = 2 * abs(dq) / T_sync # Triangular profile
+             else: 
+                return np.full_like(t, qf)
 
-        # Agora temos os parâmetros escalonados
         t_acc = v_scaled / amax
         d_acc = 0.5 * amax * t_acc**2
         t_cte = T_sync - 2 * t_acc
 
-        # Se t_cte for negativo (erro de ponto flutuante), ajuste para triangular
+        # If t_cte is negative (floating point error), adjust to triangular
         if t_cte < 0:
             t_acc = T_sync / 2
             t_cte = 0
-            # Recalcula v_scaled e a_scaled para o perfil triangular
+            # Recalculate v_scaled and a_scaled for the triangular profile
             a_scaled = 4 * abs(dq) / (T_sync**2)
             v_scaled = a_scaled * t_acc
             d_acc = abs(dq) / 2
-            amax = a_scaled # Use a aceleração escalonada no cálculo abaixo
+            amax = a_scaled
 
         q = np.zeros_like(t)
 
@@ -195,29 +172,30 @@ class Robot():
                 td = ti - t_acc - t_cte
                 q[i] = qf - 0.5 * amax * (t_acc - td)**2 * np.sign(dq)
 
-        # Garanta que o último ponto seja *exatamente* o final
+        # Guarantee that the last point is *exactly* the end
         if len(q) > 0:
             q[-1] = qf
 
         return q
-    # --- FIM DA FUNÇÃO NOVA ---
 
     def _calculate_t_total(self, q0, qf, vmax, amax):
-        # Esta função está correta e é usada por joint_space_trajectory
         dq = qf - q0
 
-        # Proteção contra divisão por zero
+        # Protection against zero vmax or amax
         if amax == 0 or vmax == 0:
-            return 0 if dq == 0 else float('inf')
+            if dq == 0: 
+                return 0 
+            else:
+                return float('inf')
 
         t_acc = vmax / amax
         d_acc = 0.5 * amax * t_acc**2
 
-        # Caso em que o deslocamento é pequeno demais para atingir vmax (perfil triangular)
+        # If the displacement is too small to reach vmax (triangular profile)
         if abs(dq) < 2 * d_acc:
             t_acc = np.sqrt(abs(dq) / amax)
             t_cte = 0
-        else: # Perfil trapezoidal
+        else: # Trapezoidal profile
             d_cte = abs(dq) - 2 * d_acc
             t_cte= d_cte / vmax
 
