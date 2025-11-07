@@ -50,19 +50,15 @@ class Robot():
             return None
 
         # Selects the best solution for q2 and computes q1 accordingly (if both are valid then selects the one with smaller absolute value for q1)
-        if -90 <= q2[0] <= 90:
-            q1_positive = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0])
-            q1_negative = self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1])
-            print(f"q1_positive: {q1_positive}, q1_negative: {q1_negative}")
-            if abs(q1_positive) <= abs(q1_negative):
-                q2 = q2[0]
-                q1 = q1_positive
-            else:
-                q2 = q2[1]
-                q1 = q1_negative
+        q1 = []
+        q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0]))
+        q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1]))
+        print(f"q1_positive: {q1[0]}, q1_negative: {q1[1]}")
+        print(f"q2_positive: {q2[0]}, q2_negative: {q2[1]}")
 
         # Computes q3 based on desired orientation phi
         q3 = phi - (q1 + q2)
+        print(f"q3_positive: {q3[0]}, q3_negative: {q3[1]}")
 
         return np.array([q0, q1, q2, q3])
 
