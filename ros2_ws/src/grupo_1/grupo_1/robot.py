@@ -37,7 +37,6 @@ class Robot():
         z = z - (self.distances[0] + self.distances[1]) # Adjusting z to the first motor above the base
 
         # Coordinates of the motor before the tool
-        q0 = self._compute_q0(x, y)
         r_tool = m.sqrt(x**2 + y**2)
         z_last_motor = z - (self.tool_distance_from_last_motor[0,0] * m.sin(m.radians(phi))) # Getting the value of the Z axis on RZ plane where the motor is located
         r_last_motor = r_tool - (self.tool_distance_from_last_motor[0, 0] * m.cos(m.radians(phi))) # Getting the value of the R axis on RZ plane where the motor is located
@@ -50,24 +49,36 @@ class Robot():
             return None
 
         # Selects the best solution for q2 and computes q1 accordingly (if both are valid then selects the one with smaller absolute value for q1)
+        q0 = []
+        q0.append(self._compute_q0(x, y))
+        q0.append(q0[0])
+
         q1 = []
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0]))
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1]))
         print(f"q1_positive: {q1[0]}, q1_negative: {q1[1]}")
         print(f"q2_positive: {q2[0]}, q2_negative: {q2[1]}")
 
+        q0 = np.array(q0)
+        q1 = np.array(q1)
+        q2 = np.array(q2)
+
         # Computes q3 based on desired orientation phi
         q3 = phi - (q1 + q2)
-        print(f"q3_positive: {q3[0]}, q3_negative: {q3[1]}")
-
         return np.array([q0, q1, q2, q3])
 
-    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.02):
-        q_init = self.inverse_kinematics(pose_inicial)
+    def joint_space_trajectory(self, q_init, pose_final, dt=0.02):
         q_fim = self.inverse_kinematics(pose_final)
 
-        if q_init is None or q_fim is None:
-            raise ValueError("Posição inicial ou final inalcançável")
+        if q_fim is None:
+            raise ValueError("Posição final inalcançável")
+        
+        distance_1 = np.sum(np.abs(q_fim[:, 0] - q_init))
+        distance_2 = np.sum(np.abs(q_fim[:, 1] - q_init))
+        if distance_1 < distance_2:
+            q_fim = q_fim[:, 0]
+        else:
+            q_fim = q_fim[:, 1]
 
         print("Initial joints position:", q_init)
         print("Final joints position:", q_fim)
