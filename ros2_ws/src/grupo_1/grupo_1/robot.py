@@ -56,8 +56,6 @@ class Robot():
         q1 = []
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0]))
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1]))
-        print(f"q1_positive: {q1[0]}, q1_negative: {q1[1]}")
-        print(f"q2_positive: {q2[0]}, q2_negative: {q2[1]}")
 
         q0 = np.array(q0)
         q1 = np.array(q1)
@@ -128,6 +126,50 @@ class Robot():
         qdd = np.gradient(qd, dt, axis=0)  # acceleration
 
         return t_total, qs, qd, qdd
+    
+    #  imaginando a trajetória como retilínia no espaço cartesiano
+    def task_space_trajectory(self, pose_init, pose_final, time, amostras):
+        pose_init = np.array(pose_init)
+        pose_final = np.array(pose_final)
+        distâncias = pose_final - pose_init
+        num_points = amostras
+        t_total = np.linspace(0, time, num_points)
+        # Mais amostras no início e no fim, e menos no meio para suavizar a aceleração (forma senoidal)
+        amostragem = (np.cos(np.linspace(-m.pi, 0, num_points)) + 1) / 2
+        dt = time / num_points
+
+        steps = np.array(pose_init[:, None] + (distâncias[:, None] * amostragem))
+
+        joints_steps = []
+        for i in range(num_points):
+            joints = self.inverse_kinematics(steps[:, i])
+            if joints is None:
+                raise ValueError("Posição inalcançável durante a trajetória")
+            
+            if i == 0:
+                joints = joints[:, 0]
+                # sum_1 = np.sum(np.abs(joints[:, 0]))
+                # sum_2 = np.sum(np.abs(joints[:, 1]))
+                # if sum_1 < sum_2:
+                #     joints = joints[:, 0]
+                # else:
+                #     joints = joints[:, 1]
+
+            else:
+                distance_1 = np.sum(np.abs(joints[:, 0] - joints_steps[i-1]))
+                distance_2 = np.sum(np.abs(joints[:, 1] - joints_steps[i-1]))
+                if distance_1 < distance_2:
+                    joints = joints[:, 0]
+                else:
+                    joints = joints[:, 1]
+
+            joints_steps.append(joints)              
+
+        qs = np.array(joints_steps)
+        qd = np.gradient(qs, dt, axis=0)
+        qdd = np.gradient(qd, dt, axis=0)
+
+        return t_total, steps.T, qs, qd, qdd
 
     def _trapezoidal_profile(self, q0, qf, amax, T_sync, t):
         dq = qf - q0
