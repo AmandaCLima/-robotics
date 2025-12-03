@@ -3,6 +3,11 @@ import rclpy
 from arm_interfaces.srv import FollowTrajectory
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from rclpy.node import Node
+from builtin_interfaces.msg import Duration
+import time as t
+
+import numpy as np
+import math as m
 
 import numpy as np
 import math as m
@@ -43,7 +48,6 @@ class Robot():
         z = z - (self.distances[0] + self.distances[1]) # Adjusting z to the first motor above the base
 
         # Coordinates of the motor before the tool
-        q0 = self._compute_q0(x, y)
         r_tool = m.sqrt(x**2 + y**2)
         z_last_motor = z - (self.tool_distance_from_last_motor[0,0] * m.sin(m.radians(phi))) # Getting the value of the Z axis on RZ plane where the motor is located
         r_last_motor = r_tool - (self.tool_distance_from_last_motor[0, 0] * m.cos(m.radians(phi))) # Getting the value of the R axis on RZ plane where the motor is located
@@ -56,27 +60,34 @@ class Robot():
             return None
 
         # Selects the best solution for q2 and computes q1 accordingly (if both are valid then selects the one with smaller absolute value for q1)
+        q0 = []
+        q0.append(self._compute_q0(x, y))
+        q0.append(q0[0])
+
         q1 = []
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[0]))
         q1.append(self._compute_q1(r_last_motor, z_last_motor, self.distances[2], self.distances[3], q2[1]))
-        print(f"q1_positive: {q1[0]}, q1_negative: {q1[1]}")
-        print(f"q2_positive: {q2[0]}, q2_negative: {q2[1]}")
+
+        q0 = np.array(q0)
+        q1 = np.array(q1)
+        q2 = np.array(q2)
 
         # Computes q3 based on desired orientation phi
         q3 = phi - (q1 + q2)
-        print(f"q3_positive: {q3[0]}, q3_negative: {q3[1]}")
-
         return np.array([q0, q1, q2, q3])
 
-    def joint_space_trajectory(self, pose_final, pose_inicial, dt=0.02):
-        #q_init = self.inverse_kinematics(pose_inicial)
-        #q_fim = self.inverse_kinematics(pose_final)
+    def joint_space_trajectory(self, q_init, pose_final, dt=0.02):
+        q_fim = self.inverse_kinematics(pose_final)
 
-        q_init = [0, 90, -90, 0]
-        q_fim = [0, 90, -60, 0]
-
-        if q_init is None or q_fim is None:
-            raise ValueError("Posição inicial ou final inalcançável")
+        if q_fim is None:
+            raise ValueError("Posição final inalcançável")
+        
+        distance_1 = np.sum(np.abs(q_fim[:, 0] - q_init))
+        distance_2 = np.sum(np.abs(q_fim[:, 1] - q_init))
+        if distance_1 < distance_2:
+            q_fim = q_fim[:, 0]
+        else:
+            q_fim = q_fim[:, 1]
 
         print("Initial joints position:", q_init)
         print("Final joints position:", q_fim)
@@ -121,11 +132,43 @@ class Robot():
         # Convert to array (rows: time, columns: joints)
         qs = np.vstack(qs_list).T
 
-        # Calculate velocity and acceleration
-        qd = np.gradient(qs, dt, axis=0)   # velocity
-        qdd = np.gradient(qd, dt, axis=0)  # acceleration
+        return t_total, qs
+    
+    #  imaginando a trajetória como retilínia no espaço cartesiano
+    def task_space_trajectory(self, pose_init, joints_init, pose_final, time, amostras):
+        pose_init = np.array(pose_init)
+        pose_final = np.array(pose_final)
+        distâncias = pose_final - pose_init
+        num_points = amostras
+        t_total = np.linspace(0, time, num_points)
+        # Mais amostras no início e no fim, e menos no meio para suavizar a aceleração (forma senoidal)
+        amostragem = (np.cos(np.linspace(-m.pi, 0, num_points)) + 1) / 2
+        dt = time / num_points
 
-        return t_total, qs, qd, qdd
+        steps = np.array(pose_init[:, None] + (distâncias[:, None] * amostragem))
+
+        joints_steps = []
+        for i in range(num_points):
+            joints = self.inverse_kinematics(steps[:, i])
+            if joints is None:
+                raise ValueError("Posição inalcançável durante a trajetória")
+            
+            if i == 0:
+                joints = joints_init
+
+            else:
+                distance_1 = np.sum(np.abs(joints[:, 0] - joints_steps[i-1]))
+                distance_2 = np.sum(np.abs(joints[:, 1] - joints_steps[i-1]))
+                if distance_1 < distance_2:
+                    joints = joints[:, 0]
+                else:
+                    joints = joints[:, 1]
+
+            joints_steps.append(joints)              
+
+        qs = np.array(joints_steps)
+
+        return t_total, qs
 
     def _trapezoidal_profile(self, q0, qf, amax, T_sync, t):
         dq = qf - q0
@@ -258,6 +301,7 @@ class Robot():
         return m.degrees(q1)
 
 
+
 class MinimalClientAsync(Node):
     def __init__(self):
         super().__init__('minimal_client_async')
@@ -267,7 +311,7 @@ class MinimalClientAsync(Node):
         self.req = FollowTrajectory.Request()
 
     def send_request(self, pos, time):
-        self.req.trajectory.points = []
+        self.req.data.points = []
         for idx in range(len(pos)):
             pt = JointTrajectoryPoint()
             pt.positions = [0] * 4
@@ -275,33 +319,71 @@ class MinimalClientAsync(Node):
             pt.positions[1] = pos[idx][1]
             pt.positions[2] = pos[idx][2]
             pt.positions[3] = pos[idx][3]
-            pt.time_from_start = time
-            self.req.trajectory.points.append(pt)
+            pt.time_from_start = Duration(sec=int(time[idx]), nanosec=int((time[idx] % 1) * 1e9))
+            self.req.data.points.append(pt)
         print('Calling service...')
         self.cli.call_async(self.req)
     
 def main():
-    tool_point = np.array([[0.052],
+    tool_point = np.array([[0.053],
                       [0],
                       [0],
                       [1]])
-    translation = [0, 0.112, 0.103, 0.123]
+    translation = [0.015, 0.104, 0.103, 0.125]
     v_max = [30, 30, 30, 30]
     a_max = [10, 10, 10, 10]
     num_joints = 4
-    # pose_final = [13.45, 13.45, 30.48, 65] # Pose fictícia
-    # pose_inicial = [27.8, 0, 11.2, 0]  # Pose fictícia
     rob = Robot(translation, tool_point, v_max, a_max, num_joints)
-    dt, pos, _, _ = rob.joint_space_trajectory()
-    # int(sys.argv[1]), int(sys.argv[2])
     rclpy.init()
+    initial_joints = [0, 90, -90, 0] # Initial joint positions
+    initial_pose = [translation[3] + tool_point[0][0], tool_point[1][0], translation[0] + translation[1] + translation[2] + tool_point[2][0], 0]
+    print(initial_pose)
+    num_points = 1000
     minimal_client = MinimalClientAsync()
-    future = minimal_client.send_request(pos, dt)
-    rclpy.spin_until_future_complete(minimal_client, future)
-    # minimal_client.get_logger().info('Result of add_two_ints: for %d + %d = %d' % (int(sys.argv[1]), int(sys.argv[2]), response.sum))
+    while True:
+        entry = input("Digite a pose desejada (0 para fechar): ") # Pose entrada
+        if entry == '0':
+            break
+        final_pose = np.float16(entry.split(' '))
+        final_pose[-1] += 1
+
+        select = input("Escolha o tipo de trajetória (T - task space / J - joint space): ")
+        if select == 'J':
+            times, pos = rob.joint_space_trajectory(initial_joints, final_pose)
+            minimal_client.send_request(pos, times)
+        else:
+            time = int(input("Quanto tempo (s) quer testar? "))
+            times, pos= rob.task_space_trajectory(initial_pose, initial_joints, final_pose, time, num_points)
+            minimal_client.send_request(pos, times)
+            t.sleep(time)
+
+        initial_joints = pos[-1]
+        initial_pose = final_pose
+
 
     minimal_client.destroy_node()
     rclpy.shutdown()
+
+
+# class MinimalClientAsync(Node):
+#     def __init__(self):
+#         super().__init__('minimal_client_async')
+#         self.cli = self.create_client(FollowTrajectory, 'moveServer/followTrajectory_srv')
+#         while not self.cli.wait_for_service(timeout_sec = 1.0):
+#             self.get_logger().info('service not available, waiting again...')
+#         print("Conectou !!")
+
+# def main():
+#     rclpy.init()
+#     minimal_client = MinimalClientAsync()
+#     future = minimal_client.send_request(int(sys.argv[1]), int(sys.argv[2]))
+#     rclpy.spin_until_future_complete(minimal_client, future)
+#     response = future.result()
+#     #minimal_client.get_logger().info('Result of add_two_ints: for %d + %d = %d' % (int(sys.argv[1]), int(sys.argv[2]), response.sum))
+
+#     minimal_client.destroy_node()
+#     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

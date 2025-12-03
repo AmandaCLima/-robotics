@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-9e361c1b7b107103225b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "arm_interfaces__py",
+					"jsonFile" : "directory-arm_interfaces__py-aebcb63f64291655703f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/CIN/tjgc/Documents/Robotics/build/arm_interfaces/arm_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "arm_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_arm_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_arm_interfaces_egg-d4da910de649e712f3ce.json",
+					"name" : "ament_cmake_python_build_arm_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_arm_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_arm_interfaces-a2f93f228f3d5a2f45bf.json",
+					"name" : "ament_cmake_python_copy_arm_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces-91376fb30960bd6678aa.json",
+					"name" : "arm_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__cpp-ed77bd9ddfb0f1882302.json",
+					"name" : "arm_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "arm_interfaces__py::@13762cad1442d5ee32f7",
+					"jsonFile" : "target-arm_interfaces__py-b665e563066af55537fb.json",
+					"name" : "arm_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_generator_c-9ae876e53eee6da44368.json",
+					"name" : "arm_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_generator_py-98cf92db3243d2f773a2.json",
+					"name" : "arm_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_generator_type_description-f9a149189e7309dd14f7.json",
+					"name" : "arm_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_c-aed9d57c9bde0936ac95.json",
+					"name" : "arm_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_cpp-e0b39de35f467776f590.json",
+					"name" : "arm_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_fastrtps_c-de4060451b558c692de9.json",
+					"name" : "arm_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_fastrtps_cpp-53f77c9ec9b0c16ffbae.json",
+					"name" : "arm_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_introspection_c-b96764d07a0bcc97173b.json",
+					"name" : "arm_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces__rosidl_typesupport_introspection_cpp-4839f8662d216d83f204.json",
+					"name" : "arm_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces_s__rosidl_typesupport_c-4737a43d5af1e72132ba.json",
+					"name" : "arm_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces_s__rosidl_typesupport_fastrtps_c-c739e5377a11eb7b8128.json",
+					"name" : "arm_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces_s__rosidl_typesupport_introspection_c-192dc48749ebb2e01c20.json",
+					"name" : "arm_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "arm_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-arm_interfaces_uninstall-c2c675879504ee557b7e.json",
+					"name" : "arm_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-75bcbc8534a95b0a2a87.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/CIN/tjgc/Documents/Robotics/build/arm_interfaces",
+		"source" : "/home/CIN/tjgc/Documents/Robotics/ros2_ws/src/arm_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
