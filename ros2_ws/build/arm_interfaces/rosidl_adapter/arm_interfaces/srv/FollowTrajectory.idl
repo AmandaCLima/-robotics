@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from arm_interfaces/srv/FollowTrajectory.srv
+// generated code does not contain a copyright notice
+
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+module arm_interfaces {
+  module srv {
+    struct FollowTrajectory_Request {
+      trajectory_msgs::msg::JointTrajectory data;
+    };
+    struct FollowTrajectory_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

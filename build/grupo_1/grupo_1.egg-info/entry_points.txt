@@ -1,0 +1,2 @@
+[console_scripts]
+client = grupo_1.client:main

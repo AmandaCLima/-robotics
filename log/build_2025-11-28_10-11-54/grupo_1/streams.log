@@ -1,0 +1,25 @@
+[0.703s] Invoking command in '/home/CIN/tjgc/Documents/Robotics/ros2_ws/src/grupo_1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/tjgc/Documents/Robotics/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/grupo_1 build --build-base /home/CIN/tjgc/Documents/Robotics/build/grupo_1/build install --record /home/CIN/tjgc/Documents/Robotics/build/grupo_1/install.log --single-version-externally-managed install_data
+[0.911s] running egg_info
+[0.926s] writing ../../../build/grupo_1/grupo_1.egg-info/PKG-INFO
+[0.926s] writing dependency_links to ../../../build/grupo_1/grupo_1.egg-info/dependency_links.txt
+[0.927s] writing entry points to ../../../build/grupo_1/grupo_1.egg-info/entry_points.txt
+[0.927s] writing requirements to ../../../build/grupo_1/grupo_1.egg-info/requires.txt
+[0.927s] writing top-level names to ../../../build/grupo_1/grupo_1.egg-info/top_level.txt
+[0.957s] reading manifest file '../../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[0.957s] adding license file 'LICENSE'
+[0.958s] writing manifest file '../../../build/grupo_1/grupo_1.egg-info/SOURCES.txt'
+[0.958s] running build
+[0.958s] running build_py
+[0.958s] copying grupo_1/client.py -> /home/CIN/tjgc/Documents/Robotics/build/grupo_1/build/lib/grupo_1
+[0.958s] running install
+[0.963s] running install_lib
+[0.979s] copying /home/CIN/tjgc/Documents/Robotics/build/grupo_1/build/lib/grupo_1/client.py -> /home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages/grupo_1
+[0.979s] byte-compiling /home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages/grupo_1/client.py to client.cpython-312.pyc
+[0.982s] running install_data
+[0.982s] running install_egg_info
+[0.999s] removing '/home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages/grupo_1-0.0.0-py3.12.egg-info' (and everything under it)
+[1.000s] Copying ../../../build/grupo_1/grupo_1.egg-info to /home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages/grupo_1-0.0.0-py3.12.egg-info
+[1.001s] running install_scripts
+[1.108s] Installing client script to /home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/grupo_1
+[1.108s] writing list of installed files to '/home/CIN/tjgc/Documents/Robotics/build/grupo_1/install.log'
+[1.130s] Invoked command in '/home/CIN/tjgc/Documents/Robotics/ros2_ws/src/grupo_1' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/CIN/tjgc/Documents/Robotics/build/grupo_1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/CIN/tjgc/Documents/Robotics/install/grupo_1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/grupo_1 build --build-base /home/CIN/tjgc/Documents/Robotics/build/grupo_1/build install --record /home/CIN/tjgc/Documents/Robotics/build/grupo_1/install.log --single-version-externally-managed install_data

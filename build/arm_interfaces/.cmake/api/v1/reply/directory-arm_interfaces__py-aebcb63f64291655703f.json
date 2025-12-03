@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "arm_interfaces__py",
+		"source" : "/home/CIN/tjgc/Documents/Robotics/build/arm_interfaces/arm_interfaces__py"
+	}
+}
