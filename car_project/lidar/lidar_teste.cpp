@@ -1,10 +1,10 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <csignal>
-#include <thread>
-#include <chrono>
 #include <src/CYdLidar.h>
+#include <iostream>
+#include <signal.h>
+#include <chrono>
+#include <thread>
+#include <map>
+
 
 using namespace std;
 using namespace ydlidar;
@@ -15,29 +15,24 @@ void sigHandler(int sig) {
 }
 
 
-map<string, string> lidarPortList() {
-    map<string, string> ports;
-    ports["ydlidar"] = "/dev/ydlidar";
-    return ports;
-}
+// Automatically detect the LiDAR port
+std::string detectLidarPort(){
+    std::map<std::string , std::string> ports = lidarPortList();
+    std::string port = "/dev/ydlidar";
 
-// Detecta automaticamente a porta do LiDAR
-string detectLidarPort() {
-    map<string, string> ports = lidarPortList();
-    string port = "/dev/ydlidar";
-
-    if (ports.empty()) {
-        cerr << "No ports detected. Using default port: " << port << endl;
+    if (ports.empty()){
+        cerr << "No ports detected . Using default port : " << port << endl;
         return port;
     }
 
-    for (const auto& p : ports) {
-        port = p.second;
+    for (const auto & p : ports){
+        port = p.second ;
     }
 
-    cout << "Using port: " << port << endl;
+    cout << " Using port : " << port << endl;
     return port;
 }
+
 
 int main() {
     signal(SIGINT, sigHandler);
